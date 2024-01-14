@@ -1,12 +1,12 @@
 import express from "express";
 import cors from "cors";
-// Importamos la Conexion a la base de datos
 import db from "./database/db.js";
-// Importamos el Enrutador
 import GamingRoutes from "./routes/GamingRoutes.js";
 import LoginRoutes from "./routes/LoginRoutes.js";
 import CarritoRoutes from "./routes/CarritoRoutes.js";
 import ModaRoutes from "./routes/ModaRoutes.js";
+import { PORT } from "./database/config.js";
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -26,6 +26,6 @@ app.get("/", (req, res) => {
   res.send("Hola Mundo");
 });
 
-app.listen(8000, () => {
-  console.log(`Server UP running in http://localhost:8000/`);
+app.listen(PORT, () => {
+  console.log(`Server UP running on port ${PORT}`);
 });
