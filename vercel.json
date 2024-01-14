@@ -10,8 +10,5 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ],
-  "build": {
-    "postinstall": "npm rebuild bcrypt --build-from-source"
-  }
+  ]
 }

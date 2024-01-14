@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "sequelize": "sequelize-cli"
+    "sequelize": "sequelize-cli",
+    "build": "npm rebuild bcrypt --build-from-source"
   },
   "keywords": [],
   "author": "",
