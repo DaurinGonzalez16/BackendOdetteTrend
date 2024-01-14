@@ -1,6 +1,6 @@
 import { Usuarios } from "../models/UsuarioModel.js";
 import Jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 /*CREAR USUARIOS - REGISTRASE */
 export const Registrarse = async (req, res) => {
