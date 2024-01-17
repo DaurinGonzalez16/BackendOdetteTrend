@@ -76,7 +76,9 @@ export const IniciarSesion = async (req, res) => {
           }
         );
 
+        // Envía el token como parte de la respuesta
         return res.status(200).json({
+          token: token,
           message: "Inicio de sesión exitoso",
         });
       } else {
