@@ -7,7 +7,7 @@ export const ConseguirCarrito = async (req, res) => {
     const { userId } = req.params;
 
     const cartItems = await CartItem.findAll({
-      where: { "$Cart.user_id$": userId },
+      where: { "$cart.user_id$": userId },
       include: [
         {
           model: ModelGaming,
@@ -25,6 +25,7 @@ export const ConseguirCarrito = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 export const AnadirCarrito = async (req, res) => {
   try {
     const { userId, productId, quantity } = req.body;

@@ -27,5 +27,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server UP running on port ${PORT}`);
+  console.log(
+    `Server UP running on port https://backend-odette-trend.vercel.app/${PORT}`
+  );
 });

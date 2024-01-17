@@ -1,4 +1,4 @@
-export const PORT = process.env.PORT || 8000;
+export const PORT = process.env.PORT || 32947;
 export const DB_HOST = process.env.DB_HOST || "viaduct.proxy.rlwy.net";
 export const USER = process.env.USER || "root";
 export const DB_PASSWORD =
