@@ -169,7 +169,7 @@ export const ConseguirCarritoModa = async (req, res) => {
     const { userId } = req.params;
 
     const cartItems = await CartItemModa.findAll({
-      where: { "$Cart.user_id$": userId },
+      where: { "$cart.user_id$": userId },
       include: [
         {
           model: ModaModel,
