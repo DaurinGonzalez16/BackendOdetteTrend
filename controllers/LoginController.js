@@ -49,32 +49,45 @@ export const IniciarSesion = async (req, res) => {
         .json({ message: "Correo electrónico y contraseña son obligatorios" });
     }
 
+    // Busca el usuario por su dirección de correo electrónico
     const usuarioEncontrado = await Usuarios.findOne({
       where: {
         email: email,
-        password: password,
       },
     });
 
     if (usuarioEncontrado) {
-      const token = Jwt.sign(
-        {
-          id: usuarioEncontrado.id,
-          nombre: usuarioEncontrado.username,
-        },
-        "Stack",
-        {
-          expiresIn: "1h",
-        }
+      // Compara la contraseña proporcionada con el hash almacenado utilizando bcrypt
+      const isPasswordValid = await bcrypt.compare(
+        password,
+        usuarioEncontrado.password
       );
 
-      // Envía el token como parte de la respuesta
-      return res.status(200).json({
-        token: token,
-        message: "Inicio de sesión exitoso",
-      });
+      if (isPasswordValid) {
+        // Si la contraseña es válida, genera un token de sesión
+        const token = Jwt.sign(
+          {
+            id: usuarioEncontrado.id,
+            nombre: usuarioEncontrado.username,
+          },
+          "Stack",
+          {
+            expiresIn: "1h",
+          }
+        );
+
+        // Envía el token como parte de la respuesta
+        return res.status(200).json({
+          token: token,
+          message: "Inicio de sesión exitoso",
+        });
+      } else {
+        return res.status(401).json({ message: "Contraseña incorrecta" });
+      }
     } else {
-      return res.json({ message: "Usuario no encontrado en la base de datos" });
+      return res
+        .status(404)
+        .json({ message: "Usuario no encontrado en la base de datos" });
     }
   } catch (error) {
     return res
