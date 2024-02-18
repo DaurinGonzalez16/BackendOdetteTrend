@@ -4,3 +4,5 @@ export const DB_HOST =
 export const USER = process.env.USER || "umx9gui0qguradir";
 export const DB_PASSWORD = process.env.DB_PASSWORD || "UGAhPuk5JVTMKnngOJ7f";
 export const DB_NAME = process.env.DB_NAME || "bd4jeujm6mjiwysf9c71";
+
+//
