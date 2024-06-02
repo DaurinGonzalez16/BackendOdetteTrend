@@ -1,4 +1,4 @@
-<H1>Descripcion del Proyecto</H1>
+<H1>Descripcion del Proyecto(Backend)</H1>
 
 <p>Este es el Backend de mi Aplicacion OdetteTrend, el cual lo hice Impulsado por Node.js, Express, y Sequelize, el backend de Odettetrend garantiza un rendimiento eficiente y seguro. La autenticación se gestiona con jwt-decode y bcryptjs, mientras que la integración de CORS facilita la comunicación sin problemas.</p>
 
@@ -12,4 +12,4 @@
 </ul>
 
 <h2>Alojamiento de la pagina</h2>
-<p><a href="https://lnkd.in/evWAF7nM"> OdetteTrend</a></p>
+<p><a href="https://grand-sopapillas-57134f.netlify.app/"> IR A ODETTETREND</a></p>
