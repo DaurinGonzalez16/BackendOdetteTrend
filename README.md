@@ -14,4 +14,4 @@
 </ul>
 
 <h2>Alojamiento de la pagina</h2>
-<p><a href="https://grand-sopapillas-57134f.netlify.app/"> IR A ODETTETREND</a></p>
+<p><a href="https://odettetrend.netlify.app/"> IR A ODETTETREND</a></p>
